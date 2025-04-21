@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <status>success</status>
+    <users>
+        <user>
+            <id>101</id>
+            <name>John Doe</name>
+            <email>john.doe@example.com</email>
+            <active>true</active>
+            <roles>
+                <role>admin</role>
+                <role>editor</role>
+            </roles>
+        </user>
+        <user>
+            <id>102</id>
+            <name>Jane Smith</name>
+            <email>jane.smith@example.com</email>
+            <active>false</active>
+            <roles>
+                <role>viewer</role>
+            </roles>
+        </user>
+    </users>
+</response>

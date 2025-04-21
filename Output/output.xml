@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-21T13:08:15.323063" rpa="false" schemaversion="5">
+<suite id="s1" name="TC9 GoogleMapAPI" source="C:\Users\danitc\PycharmProjects\RobotFrameworkAPITesting\TestCases\TC9_GoogleMapAPI.robot">
+<test id="s1-t1" name="Verify Place Details By ID" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-21T13:08:15.697733" level="INFO">Creating Session using : alias=placesSession, url=https://maps.googleapis.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>placesSession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-21T13:08:15.697590" elapsed="0.000296"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-21T13:08:15.698391" level="INFO">${params} = {'place_id': 'ChIJj61dQgK6j4AR4GeTYWZsKWw', 'fields': 'name', 'key': 'AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU'}</msg>
+<var>${params}</var>
+<arg>place_id=${PLACE_ID}</arg>
+<arg>fields=name</arg>
+<arg>key=${API_KEY}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-21T13:08:15.698091" elapsed="0.000324"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-21T13:08:16.220470" level="INFO">GET Request : url=https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
+ path_url=/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-04-21T13:08:16.220580" level="INFO">GET Response : url=https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=UTF-8', 'Date': 'Mon, 21 Apr 2025 18:08:16 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, must-revalidate', 'Vary': 'Accept-Language', 'Content-Security-Policy-Report-Only': "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaipomnpc:641:0", 'Cross-Origin-Opener-Policy-Report-Only': 'same-origin; report-to=msaipomnpc:641:0', 'Report-To': '{"group":"msaipomnpc:641:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaipomnpc:641:0"}],}', 'Server': 'scaffolding on HTTPServer2', 'Content-Length': '265', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Server-Timing': 'gfet4t7; dur=388', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'} 
+ body={
+   "error_message" : "You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started",
+   "html_attributions" : [],
+   "status" : "REQUEST_DENIED"
+} 
+ </msg>
+<msg time="2025-04-21T13:08:16.220638" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'maps.googleapis.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-04-21T13:08:16.220849" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>placesSession</arg>
+<arg>${ENDPOINT}</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-21T13:08:15.698553" elapsed="0.522324"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-04-21T13:08:16.221599" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-04-21T13:08:16.221161" elapsed="0.000486"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-21T13:08:16.222250" level="FAIL">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2025-04-21T13:08:16.221815" elapsed="0.000599">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${name}</var>
+<arg>${json['result']}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-04-21T13:08:16.222563" elapsed="0.000017"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Place Name: ${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-04-21T13:08:16.222703" elapsed="0.000018"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${EXPECTED_NAME}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-21T13:08:16.222853" elapsed="0.000018"/>
+</kw>
+<doc>Get place details and validate the place name</doc>
+<status status="FAIL" start="2025-04-21T13:08:15.696901" elapsed="0.526138">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</status>
+</test>
+<status status="FAIL" start="2025-04-21T13:08:15.324152" elapsed="0.899482"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC9 GoogleMapAPI" id="s1" pass="0" fail="1" skip="0">TC9 GoogleMapAPI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
