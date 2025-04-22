@@ -6,7 +6,7 @@ Library           Collections
 ${BASE_URL}       https://maps.googleapis.com
 ${ENDPOINT}       /maps/api/place/details/json
 ${PLACE_ID}       ChIJj61dQgK6j4AR4GeTYWZsKWw
-${API_KEY}        AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU  # Replace with your actual API key
+${API_KEY}        Api  # Replace with your actual API key
 ${EXPECTED_NAME}  Googleplex
 
 *** Test Cases ***
