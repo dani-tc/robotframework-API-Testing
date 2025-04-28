@@ -13,5 +13,3 @@ Basic Auth Test
     ${response}=        GET On Session    basicAuthSession    ${endpoint}
     Log To Console    ${response.content}
     Should Be Equal As Strings   ${response.status_code}    200
-
-    AIzaSyABUzZotwvnz0wKmEnJkTHFV2OYlMl_eOU

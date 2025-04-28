@@ -1,86 +1,453 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-21T13:08:15.323063" rpa="false" schemaversion="5">
-<suite id="s1" name="TC9 GoogleMapAPI" source="C:\Users\danitc\PycharmProjects\RobotFrameworkAPITesting\TestCases\TC9_GoogleMapAPI.robot">
-<test id="s1-t1" name="Verify Place Details By ID" line="13">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-26T16:43:06.146513" rpa="false" schemaversion="5">
+<suite id="s1" name="TC6 XML Response" source="C:\Users\danitc\PycharmProjects\RobotFrameworkAPITesting\TestCases\TC6_XML_Response.robot">
+<test id="s1-t1" name="XML Response Test" line="12">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-04-21T13:08:15.697733" level="INFO">Creating Session using : alias=placesSession, url=https://maps.googleapis.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>placesSession</arg>
+<msg time="2025-04-26T16:43:06.631401" level="INFO">Creating Session using : alias=xmlSession, url=http://www.7timer.info, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>xmlSession</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-04-21T13:08:15.697590" elapsed="0.000296"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-04-21T13:08:15.698391" level="INFO">${params} = {'place_id': 'ChIJj61dQgK6j4AR4GeTYWZsKWw', 'fields': 'name', 'key': 'AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU'}</msg>
-<var>${params}</var>
-<arg>place_id=${PLACE_ID}</arg>
-<arg>fields=name</arg>
-<arg>key=${API_KEY}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-04-21T13:08:15.698091" elapsed="0.000324"/>
+<status status="PASS" start="2025-04-26T16:43:06.631104" elapsed="0.000452"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-04-21T13:08:16.220470" level="INFO">GET Request : url=https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
- path_url=/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
+<msg time="2025-04-26T16:43:06.896055" level="INFO">GET Request : url=http://www.7timer.info/bin/api.pl?lon=113.17&amp;lat=23.09&amp;product=civil&amp;output=xml 
+ path_url=/bin/api.pl?lon=113.17&amp;lat=23.09&amp;product=civil&amp;output=xml 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-04-21T13:08:16.220580" level="INFO">GET Response : url=https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJj61dQgK6j4AR4GeTYWZsKWw&amp;fields=name&amp;key=AIzaSyBh5gorO2Zc5TXKRFk5M52awmTwR2TMtNU 
+<msg time="2025-04-26T16:43:06.896161" level="INFO">GET Response : url=http://www.7timer.info/bin/api.pl?lon=113.17&amp;lat=23.09&amp;product=civil&amp;output=xml 
  status=200, reason=OK 
- headers={'Content-Type': 'application/json; charset=UTF-8', 'Date': 'Mon, 21 Apr 2025 18:08:16 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, must-revalidate', 'Vary': 'Accept-Language', 'Content-Security-Policy-Report-Only': "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaipomnpc:641:0", 'Cross-Origin-Opener-Policy-Report-Only': 'same-origin; report-to=msaipomnpc:641:0', 'Report-To': '{"group":"msaipomnpc:641:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaipomnpc:641:0"}],}', 'Server': 'scaffolding on HTTPServer2', 'Content-Length': '265', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Server-Timing': 'gfet4t7; dur=388', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'} 
- body={
-   "error_message" : "You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started",
-   "html_attributions" : [],
-   "status" : "REQUEST_DENIED"
-} 
+ headers={'Date': 'Sat, 26 Apr 2025 21:43:07 GMT', 'Server': 'Apache/2.4.38 (Debian)', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Access-Control-Allow-Origin': '*', 'Content-Length': '1279', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/plain'} 
+ body=&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- 7Timer CIVIL product XML output --&gt;
+&lt;!-- Refer to www.7timer.info for documentation --&gt;
+&lt;product name="civil"&gt;
+	&lt;init&gt;2025042612&lt;/init&gt;
+	&lt;dataseries&gt;
+		&lt;data timepoint="3h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;1&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;84%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudynight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="6h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;24&lt;/temp2m&gt;
+			&lt;rh2m&gt;83%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;SE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudynight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="9h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;24&lt;/temp2m&gt;
+			&lt;rh2m&gt;81%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;SE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudynight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="12h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;24&lt;/temp2m&gt;
+			&lt;rh2m&gt;79%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;SE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="15h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;70%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="18h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;28&lt;/temp2m&gt;
+			&lt;rh2m&gt;70%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="21h"&gt;
+			&lt;cloudcover&gt;7&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;1&lt;/prec_amount&gt;
+			&lt;temp2m&gt;29&lt;/temp2m&gt;
+			&lt;rh2m&gt;65%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;oshowerday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="24h"&gt;
+			&lt;cloudcover&gt;8&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;27&lt;/temp2m&gt;
+			&lt;rh2m&gt;70%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;W&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="27h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;26&lt;/temp2m&gt;
+			&lt;rh2m&gt;76%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;NW&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="30h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;1&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;80%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="33h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;24&lt;/temp2m&gt;
+			&lt;rh2m&gt;85%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;N&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="36h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;89%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;NE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="39h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-4&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;28&lt;/temp2m&gt;
+			&lt;rh2m&gt;63%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;N&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="42h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-4&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;31&lt;/temp2m&gt;
+			&lt;rh2m&gt;60%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;N&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="45h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;30&lt;/temp2m&gt;
+			&lt;rh2m&gt;59%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;N&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="48h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;28&lt;/temp2m&gt;
+			&lt;rh2m&gt;58%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;NE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="51h"&gt;
+			&lt;cloudcover&gt;2&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;26&lt;/temp2m&gt;
+			&lt;rh2m&gt;65%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;NE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;clearnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="54h"&gt;
+			&lt;cloudcover&gt;2&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;59%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;NE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;clearnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="57h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;24&lt;/temp2m&gt;
+			&lt;rh2m&gt;64%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;N&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="60h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;26&lt;/temp2m&gt;
+			&lt;rh2m&gt;60%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;E&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="63h"&gt;
+			&lt;cloudcover&gt;8&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;29&lt;/temp2m&gt;
+			&lt;rh2m&gt;57%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;SE&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="66h"&gt;
+			&lt;cloudcover&gt;8&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;30&lt;/temp2m&gt;
+			&lt;rh2m&gt;60%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="69h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;30&lt;/temp2m&gt;
+			&lt;rh2m&gt;57%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="72h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;28&lt;/temp2m&gt;
+			&lt;rh2m&gt;65%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;SW&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="75h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;26&lt;/temp2m&gt;
+			&lt;rh2m&gt;64%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;3&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainnight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="78h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;65%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudynight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="81h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;70%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudynight&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="84h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;25&lt;/temp2m&gt;
+			&lt;rh2m&gt;67%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudyday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="87h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;2&lt;/lifted_index&gt;
+			&lt;prec_type&gt;none&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;29&lt;/temp2m&gt;
+			&lt;rh2m&gt;53%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;cloudyday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="90h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;32&lt;/temp2m&gt;
+			&lt;rh2m&gt;47%&lt;/rh2m&gt;
+			&lt;wind10m_direction&gt;S&lt;/wind10m_direction&gt;
+			&lt;wind10m_speed&gt;2&lt;/wind10m_speed&gt;
+			&lt;weather&gt;lightrainday&lt;/weather&gt;
+		&lt;/data&gt;
+		&lt;data timepoint="93h"&gt;
+			&lt;cloudcover&gt;9&lt;/cloudcover&gt;
+			&lt;lifted_index&gt;-1&lt;/lifted_index&gt;
+			&lt;prec_type&gt;rain&lt;/prec_type&gt;
+			&lt;prec_amount&gt;0&lt;/prec_amount&gt;
+			&lt;temp2m&gt;29&lt;/temp2m&gt;
+			&lt;rh2... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2025-04-21T13:08:16.220638" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'maps.googleapis.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-04-21T13:08:16.220849" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-04-26T16:43:06.896517" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<arg>placesSession</arg>
+<arg>xmlSession</arg>
 <arg>${ENDPOINT}</arg>
-<arg>params=${params}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-04-21T13:08:15.698553" elapsed="0.522324"/>
+<status status="PASS" start="2025-04-26T16:43:06.631712" elapsed="0.264830"/>
 </kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2025-04-21T13:08:16.221599" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-21T13:08:16.221161" elapsed="0.000486"/>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-04-26T16:43:06.897156" level="INFO">${xml_string} = &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- 7Timer CIVIL product XML output --&gt;
+&lt;!-- Refer to www.7timer.info for documentation --&gt;
+&lt;product name="civil"&gt;
+	&lt;init&gt;2025042612&lt;/init&gt;
+	&lt;dataseries&gt;
+		&lt;dat...</msg>
+<var>${xml_string}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-04-26T16:43:06.896752" elapsed="0.000429"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-04-21T13:08:16.222250" level="FAIL">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</msg>
-<var>${json}</var>
-<arg>${response.json()}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="FAIL" start="2025-04-21T13:08:16.221815" elapsed="0.000599">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</status>
+<kw name="Parse Xml" owner="XML">
+<msg time="2025-04-26T16:43:06.899268" level="INFO">${xml_obj} = &lt;Element 'product' at 0x0000027824EF2D90&gt;</msg>
+<var>${xml_obj}</var>
+<arg>${xml_string}</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<status status="PASS" start="2025-04-26T16:43:06.897309" elapsed="0.001982"/>
 </kw>
-<kw name="Get From Dictionary" owner="Collections">
-<var>${name}</var>
-<arg>${json['result']}</arg>
-<arg>name</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="NOT RUN" start="2025-04-21T13:08:16.222563" elapsed="0.000017"/>
+<kw name="Element Text Should Be" owner="XML">
+<msg time="2025-04-26T16:43:06.899904" level="FAIL">9 != 1</msg>
+<arg>${xml_obj}</arg>
+<arg>1</arg>
+<arg>.//data[1]/cloudcover</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="FAIL" start="2025-04-26T16:43:06.899414" elapsed="0.000604">9 != 1</status>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Place Name: ${name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-04-21T13:08:16.222703" elapsed="0.000018"/>
+<kw name="Get Child Elements" owner="XML">
+<var>${child_Elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//data[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.900160" elapsed="0.000016"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${name}</arg>
-<arg>${EXPECTED_NAME}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-04-21T13:08:16.222853" elapsed="0.000018"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${child_Elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.900299" elapsed="0.000016"/>
 </kw>
-<doc>Get place details and validate the place name</doc>
-<status status="FAIL" start="2025-04-21T13:08:15.696901" elapsed="0.526138">Evaluating expression {'error_message': 'You must enable Billing on the Google Cloud Project at https://console.cloud.google.com/project/_/billing/enable Learn more at https://developers.google.com/maps/gmp-get-started', 'html_attributions': [], 'status': 'REQUEST_DENIED'} failed: TypeError: Expression must be string, got dictionary.</status>
+<kw name="Get Element Text" owner="XML">
+<var>${cloudCover}</var>
+<arg>${child_Elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.900416" elapsed="0.000015"/>
+</kw>
+<kw name="Get Element Text" owner="XML">
+<var>${temp2m}</var>
+<arg>${child_Elements[4]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.900543" elapsed="0.000014"/>
+</kw>
+<kw name="Get Element Text" owner="XML">
+<var>${rh2m}</var>
+<arg>${child_Elements[5]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.900875" elapsed="0.000035"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${cloudCover}</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.901093" elapsed="0.000019"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${temp2m}</arg>
+<arg>35</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.901248" elapsed="0.000018"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${rh2m}</arg>
+<arg>35%</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-04-26T16:43:06.901381" elapsed="0.000015"/>
+</kw>
+<status status="FAIL" start="2025-04-26T16:43:06.630395" elapsed="0.271155">9 != 1</status>
 </test>
-<status status="FAIL" start="2025-04-21T13:08:15.324152" elapsed="0.899482"/>
+<status status="FAIL" start="2025-04-26T16:43:06.147581" elapsed="0.754751"/>
 </suite>
 <statistics>
 <total>
@@ -89,7 +456,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="TC9 GoogleMapAPI" id="s1" pass="0" fail="1" skip="0">TC9 GoogleMapAPI</stat>
+<stat name="TC6 XML Response" id="s1" pass="0" fail="1" skip="0">TC6 XML Response</stat>
 </suite>
 </statistics>
 <errors>
